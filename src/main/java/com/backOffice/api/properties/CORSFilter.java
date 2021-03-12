@@ -37,7 +37,7 @@ public class CORSFilter implements Filter {
             res.addHeader("Access-Control-Allow-Headers", "Content-Type");
             res.addHeader("Access-Control-Max-Age", "1");
         }
-        chain.doFilter(req, res);
+        chain.doFilter(request, response);
 		
 	}
 
