@@ -25,10 +25,6 @@ public class ClientController {
 	public ResponseEntity<List<Client>> getAllClient(){
 		System.out.println("ici  jddddddddddddddddddd");
 		ResponseEntity<List<Client>> re = new ResponseEntity<List<Client>>(clientService.getAllClient(), HttpStatus.OK);
-//		re.getHeaders().add(headerName, headerValue);
-		re.getHeaders().add("Access-Control-Allow-Origin","*");
-		re.getHeaders().add("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
-//		res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
 		return re ;
 	}
 }

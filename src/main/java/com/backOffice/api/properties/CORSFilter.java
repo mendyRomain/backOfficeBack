@@ -31,7 +31,7 @@ public class CORSFilter implements Filter {
         res.setHeader("Access-Control-Allow-Origin", "*");
         res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
         res.setHeader("Access-Control-Max-Age", "3600");
-        res.setHeader("Access-Control-Allow-Headers", "x-requested-with, content-type");
+        res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Origin");
         System.out.println("dans filter");
         chain.doFilter(request, response);
 		
