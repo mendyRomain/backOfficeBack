@@ -28,8 +28,10 @@ public class ClientController {
 		System.out.println("ici  jddddddddddddddddddd");
 //		ResponseEntity<List<Client>> re = new ResponseEntity<List<Client>>(clientService.getAllClient(), HttpStatus.OK);
 		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.set("Access-Control-Allow-Headers", "Access-Control-Allow-Origin");
 	    responseHeaders.set("Access-Control-Allow-Origin", "*");
 	    responseHeaders.set("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
+	    
 //	    responseHeaders.set("Baeldung-Example-Header", "Value-ResponseEntityBuilderWithHttpHeaders");
 //	    res.setHeader();
 //        res.setHeader();
