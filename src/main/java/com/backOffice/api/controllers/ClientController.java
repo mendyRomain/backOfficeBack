@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.backOffice.api.entities.Client;
 import com.backOffice.api.services.IClientService;
 
-import ch.qos.logback.core.status.Status;
 
 @RestController
 @RequestMapping("/client")
@@ -26,6 +25,8 @@ public class ClientController {
 	@GetMapping("/all")
 	public ResponseEntity<List<Client>> getAllClient(){
 		System.out.println("ici  jddddddddddddddddddd");
-		return new ResponseEntity<List<Client>>(clientService.getAllClient(), HttpStatus.OK);
+		ResponseEntity<List<Client>> re = new ResponseEntity<List<Client>>(clientService.getAllClient(), HttpStatus.OK);
+		re.getHeaders().set("Access-Control-Allow-Origin","*");
+		return re ;
 	}
 }
