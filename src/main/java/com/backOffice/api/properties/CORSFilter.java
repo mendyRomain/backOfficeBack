@@ -28,19 +28,12 @@ public class CORSFilter implements Filter {
 		
 		HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
-        res.addHeader("Access-Control-Allow-Origin", "*");
-        if (res.getHeader("Access-Control-Request-Method") != null && "OPTIONS".equals(req.getMethod())) {
-        	System.out.println("dans le if");
-        	System.out.println("dans filter");
-            LOG.trace("Sending Header....");
-            // CORS "pre-flight" request
-            res.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-            // response.addHeader("Access-Control-Allow-Headers", "Authorization");
-            res.addHeader("Access-Control-Allow-Headers", "Content-Type");
-            res.addHeader("Access-Control-Max-Age", "1");
-        }
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
+        res.setHeader("Access-Control-Max-Age", "3600");
+        res.setHeader("Access-Control-Allow-Headers", "x-requested-with, content-type");
         System.out.println("dans filter");
-        chain.doFilter(req, res);
+        chain.doFilter(request, response);
 		
 	}
 
