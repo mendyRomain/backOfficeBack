@@ -17,7 +17,6 @@ import ch.qos.logback.core.status.Status;
 
 @RestController
 @RequestMapping("/client")
-@CrossOrigin("Access-Control-Allow-Origin")
 public class ClientController {
 	
 	@Autowired
