@@ -31,9 +31,10 @@ public class CORSFilter implements Filter {
         res.addHeader("Access-Control-Allow-Origin", "*");
         res.addHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
         res.addHeader("Access-Control-Max-Age", "3600");
-        res.addHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Origin");
+        res.addHeader("Access-Control-Allow-Headers", "x-requested-with, content-type");
         System.out.println("dans filter");
-        chain.doFilter(request, response);
+        LOG.info("dans le filtre");
+        chain.doFilter(req, res);
 		
 	}
 
