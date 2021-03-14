@@ -17,7 +17,7 @@ import com.backOffice.api.services.IClientService;
 
 @RestController
 @RequestMapping("/client")
-@CrossOrigin("*")
+//@CrossOrigin("*")
 public class ClientController {
 	
 	@Autowired
